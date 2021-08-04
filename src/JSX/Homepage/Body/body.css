@@ -1,0 +1,18 @@
+/* table of content
+   --All post show with grid view
+*/
+body{
+    margin-top: 80px;
+}
+.body-listing{
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  
+}
+.contents{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

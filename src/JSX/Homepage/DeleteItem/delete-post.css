@@ -1,0 +1,30 @@
+/* table of content
+  --delete pages content
+*/
+.delete-body{
+   min-height: 200px;
+   width: 100%;
+}
+.content{
+  width: 30%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #abafb1;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 4px rgb(219, 217, 217);
+}
+.content h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: red;
+}
+.content .home-btn{
+    box-shadow: 2px 0px 1px 0px rgb(134, 134, 134);
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+
+}

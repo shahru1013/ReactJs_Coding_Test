@@ -1,0 +1,38 @@
+.show-item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.show-item .card{
+    height: auto;
+    min-width: 30%;
+    padding-bottom: 0px;
+}
+.show-item .card::after{
+    content: '';
+}
+.show-item .card .uid{
+    width: 100%;
+    text-align: left;
+    color: rgb(66, 53, 53);
+    line-height: 1.3;
+    font-size: 1.1em;
+}
+.show-item .card u{
+    font-weight: 500;
+    color: red;
+}
+.show-item .card p{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.show-item .card .btns{
+    display: block;
+    margin-top: 10px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+.show-item .card .btns .details-btn{
+    background-color: red;
+}

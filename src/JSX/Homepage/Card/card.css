@@ -1,0 +1,99 @@
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left:15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 10px 2px rgb(59, 59, 59);
+}
+
+.card::after {
+    content: "POST";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 4.9em;
+    color: rgba(145, 145, 145, 0.1);
+    margin-left:15%;
+}
+
+.card .imgBx {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    z-index: 999;
+}
+
+.card .imgBx img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+.card .contextBx {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.card .contextBx h3 {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btns{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  z-index: 999;
+  }
+  .details-btn{
+      text-decoration: none;
+      margin-top: 10%;
+      background-color: rgba(0, 0, 0,0.14);
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 5px;
+      color: #222;
+    }
+  .title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    height: 90px;
+  }
+
+  @media screen and (max-width:330px) {
+    .card {
+        min-width: 85vw;
+        min-height: 350px;
+    }
+    .card::after {
+        font-size: 4em;
+    }
+}
+
+
