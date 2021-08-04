@@ -1,3 +1,6 @@
+/* Author: shahru islam 
+   date : 07-04-2021
+ */
 import * as types from './types';
 const initialState = {
     data:[],
