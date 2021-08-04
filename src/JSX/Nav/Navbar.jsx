@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { loadCurrentPost } from "../../Redux/Distribution/action";
+import axios from 'axios';
+import {loadCurrentPost } from "../../Redux/Distribution/action";
 function Navbar({ loadCurrentPost }) {
   // open responsive nav
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -20,6 +21,39 @@ function Navbar({ loadCurrentPost }) {
     const val = e.target.value;
     setUserInput(parseInt(val));
   };
+  // send post request
+  const createPost=()=>{
+     const demoPost = {
+          userId:11,
+          id:3,
+          title:'Dijkstra algorithm,shortest path',
+          body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus sapiente sunt eligendi voluptas nostrum quo quaerat saepe, dolore voluptates optio dignissimos laboriosam autem perspiciatis nemo natus non? Non, sapiente beatae?'
+     };
+     sendPostRequest(demoPost);
+  }
+
+  const sendPostRequest=(demoPost)=>{
+       axios.post('https://jsonplaceholder.typicode.com/posts',demoPost).then((res)=>{
+          console.log('status :'+res.status);
+          console.log('Data :',res.data);
+       }).catch((err)=>{
+          console.log(err);
+       });
+  }
+  //send delete post request
+  const deletePost=()=>{
+    const id=10;
+    sendDeleteRequest(id);
+  }
+  const sendDeleteRequest=(id)=>{
+    axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`).then((res)=>{
+      console.log('status: ',res.status);
+      console.log('Data :',res.data);
+   }).catch((err)=>{
+      console.log(err);
+   });
+  }
+
   return (
     <div>
       <nav>
@@ -31,8 +65,11 @@ function Navbar({ loadCurrentPost }) {
             <Link className="navigator" to="/">
               Home
             </Link>
-            <Link className="navigator" to="/">
-              Create a post
+            <Link className="navigator" to="" onClick={()=>createPost()}>
+              Create post
+            </Link>
+            <Link className="navigator" to="" onClick={()=>deletePost()}>
+              Delete post
             </Link>
           </div>
           <div className="search-item">
@@ -87,6 +124,7 @@ function Navbar({ loadCurrentPost }) {
     </div>
   );
 }
+//save clicked post to redux store
 const mapDispatchToProps = (dispatch) => {
   return {
     loadCurrentPost: (id) => dispatch(loadCurrentPost(id)),

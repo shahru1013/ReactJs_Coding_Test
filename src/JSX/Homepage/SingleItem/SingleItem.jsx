@@ -44,12 +44,13 @@ function SingleItem({ currentPost, deletePost }) {
     </div>
   );
 }
-
+//load the current clicked post from redux store
 const mapStateToProps = (state) => {
   return {
     currentPost: state.dataReducer.currentPost,
   };
 };
+//delete the post from main data saved into store
 const mapDispatchToProps = (dispatch) => {
   return {
     deletePost: (id) => dispatch(deletePost(id)),
