@@ -68,12 +68,10 @@ function Navbar({ loadCurrentPost }) {
                   className="r-nav"
                   onClick={() => responsiveNavOpen()}
                 >
-                  {" "}
                   Home
                 </Link>
               </li>
               <li>
-                {" "}
                 <Link
                   to="/"
                   className="r-nav"

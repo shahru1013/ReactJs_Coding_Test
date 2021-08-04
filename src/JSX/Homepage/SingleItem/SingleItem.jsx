@@ -13,7 +13,7 @@ function SingleItem({ currentPost, deletePost }) {
               src={`https://picsum.photos/${
                 Math.floor(Math.random() * (350 - 200 + 1)) + 200
               }`}
-              alt="title"
+              alt={currentPost[0].title}
             />
           </div>
           <div className="contextBx">
